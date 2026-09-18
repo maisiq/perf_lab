@@ -31,7 +31,7 @@ def main():
 
     n1, m1, n2, m2 = [int(v) for v in args]
 
-    with ProcessPoolExecutor() as executor:
+    with ProcessPoolExecutor(max_workers=2) as executor:
         t1 = executor.submit(create_path, n1, m1)
         t2 = executor.submit(create_path, n2, m2)
 
